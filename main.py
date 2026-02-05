@@ -1,13 +1,9 @@
-tasks = []
-
-def add_task(task):
-    tasks.append(task)
-    print(f"Task '{task}' added successfully")
+def view_tasks():
+    print("Your Tasks:")
+    for i, task in enumerate(tasks, start=1):
+        print(f"{i}. {task}")
 
 def main():
     print("Welcome to Smart Task Manager")
-    add_task("Sample Task")  # Test
-    print("Current Tasks:", tasks)
-
-if __name__ == "__main__":
-    main()
+    add_task("Sample Task")
+    view_tasks()
