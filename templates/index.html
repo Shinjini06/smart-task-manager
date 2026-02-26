@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px 5px 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .task {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Smart Task Manager</h1>
+    <p>Organize. Prioritize. Achieve.</p>
+</header>
+
+<div class="container">
+
+    <h2>Add Task</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task name">
+    <input type="date" id="deadlineInput">
+    <button onclick="addTask()">Add Task</button>
+
+    <h2>Your Tasks</h2>
+    <div id="taskList"></div>
+
+</div>
+
+<footer>
+    © 2026 Smart Task Manager | Built with Python & HTML
+</footer>
+
+<script>
+    function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const deadlineInput = document.getElementById("deadlineInput");
+        const taskList = document.getElementById("taskList");
+
+        if (taskInput.value === "") {
+            alert("Please enter a task.");
+            return;
+        }
+
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "task";
+        taskDiv.innerHTML = `
+    <strong>${taskInput.value}</strong>
+    <br>
+    Deadline: ${deadlineInput.value || "Not specified"}
+`;
+
+        taskList.appendChild(taskDiv);
+
+        taskInput.value = "";
+        deadlineInput.value = "";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "task": "Complete Smart Task Manager project",
+        "priority": "High",
+        "completed": false
+    },
+    {
+        "task": "Learn Flask basics",
+        "priority": "Medium",
+        "completed": false
+    },
+    {
+        "task": "Push project to GitHub",
+        "priority": "Low",
+        "completed": true
+    }
+]
